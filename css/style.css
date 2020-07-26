@@ -30,7 +30,6 @@
       margin-left: 45.2%;
   }
   
-  /* Style the submit button with a specific background color etc */
   #contactButton {
     background-color: black;
     color: white;
@@ -40,12 +39,10 @@
     cursor: pointer;
   }
   
-  /* When moving the mouse over the submit button, add a darker green color */
   #contactButton:hover {
     background-color: rgb(68, 68, 68);
   }
   
-  /* Add a background color and some padding around the form */
   #container_table {
     border-radius: 5px;
     padding: 20px;
@@ -67,5 +64,5 @@
   #copyright {
       background-color: gray;
       height: 100px;
-      text-align: center;
+      text-align: centerذ;
   }
