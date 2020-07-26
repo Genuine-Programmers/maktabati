@@ -23,8 +23,11 @@ figure {
   margin-left: 30px;
 }
 /* main */
-main article section {
+main article section, .slider, .vision {
   padding-top: 30px;
+}
+main article section:last-of-type {
+  padding-bottom: 30px;
 }
 /* categories */
 .categories .scrollable + .scrollable {
@@ -117,9 +120,6 @@ textarea {
   position: relative;
 }
 
-.vision {
-  padding-top: 30px;
-}
 nav {
   background: gray;
 }
