@@ -17,6 +17,10 @@
     margin-bottom: 16px; 
     resize: vertical;
   }
+
+  textarea {
+      height: 200px;
+  }
   
   #name, #email {
       width: calc(50%);
@@ -64,5 +68,5 @@
   #copyright {
       background-color: gray;
       height: 100px;
-      text-align: centerذ;
+      text-align: center;
   }
