@@ -1,11 +1,13 @@
-.container {
+
+.row {
+    display: flex;
+  }
+  
+  .container {
     width: 960px;
     margin: 0 auto;
   }
 
-  .row {
-    display: flex;
-  }
 
 #name, #email, #subject, select, textarea {
     width: 100%; 
@@ -70,3 +72,53 @@
       height: 100px;
       text-align: center;
   }
+
+  .slider .fas {
+    position: absolute;
+    font-size: 50px;
+    top: 50%;
+    
+}
+.slider .fas:first-of-type{
+    left: 20px;
+   
+
+}
+.slider .fas:last-of-type{
+    right: 20px;
+    
+}
+
+.position-relative{
+    position: relative;
+}
+
+.vision
+ {
+    padding-top: 30px;
+}
+nav {
+    background:gray;
+
+  }
+  nav .container{
+    justify-content: space-between;
+  }
+  nav .logo{
+      display: flex;
+      align-items: center;
+  }
+  nav ul {
+    display: inline;
+   
+    border-width: 5px;
+    
+  }
+  nav ul li {
+    
+    color:whitesmoke;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 20px;  
+  }
+
