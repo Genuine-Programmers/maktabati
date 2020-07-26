@@ -1,13 +1,99 @@
-
+figure {
+  margin: 0;
+}
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
 .row {
-    display: flex;
+  display: flex;
+}
+.scrollable {
+  height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.scrollable figure + figure {
+  margin-top: 30px;
+}
+.flex-column {
+  flex-direction: column;
+}
+.row .col + .col {
+  margin-left: 30px;
+}
+/* main */
+main article section {
+  padding-top: 30px;
+}
+/* categories */
+.categories .scrollable + .scrollable {
+  margin-left: 30px;
+}
+
+#name, #email, #subject, select, textarea {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical;
+  }
+
+  textarea {
+      height: 200px;
   }
   
-  .container {
-    width: 960px;
+  #name, #email {
+      width: calc(50%);
+  }
+
+  #name, #lableRow label {
+      margin-right: 10px;
+  }
+
+  #emailLable{
+      margin-left: 45.2%;
+  }
+  
+  #contactButton {
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #contactButton:hover {
+    background-color: rgb(68, 68, 68);
+  }
+  
+  #container_table {
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  #footerTitle {
+      text-align: center;
+  }
+
+  #hrFooter {
+    height:2px;
+    border-width:0;
+    color:gray;
+    background-color:gray;
+    width: 650px;
     margin: 0 auto;
   }
 
+  #copyright {
+      background-color: gray;
+      height: 100px;
+      text-align: center;
+  }
 
   .slider .fas {
     position: absolute;
@@ -33,3 +119,28 @@
  {
     padding-top: 30px;
 }
+nav {
+    background:gray;
+
+  }
+  nav .container{
+    justify-content: space-between;
+  }
+  nav .logo{
+      display: flex;
+      align-items: center;
+  }
+  nav ul {
+    display: inline;
+   
+    border-width: 5px;
+    
+  }
+  nav ul li {
+    
+    color:whitesmoke;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 20px;  
+  }
+
