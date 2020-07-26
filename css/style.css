@@ -1,0 +1,32 @@
+
+.container{
+    width: 960px;
+    margin: auto;
+}
+.row {
+    display: flex;
+  }
+nav {
+    background:gray;
+
+  }
+  nav .container{
+    justify-content: space-between;
+  }
+  nav .logo{
+      display: flex;
+      align-items: center;
+  }
+  nav ul {
+    display: inline;
+   
+    border-width: 5px;
+    
+  }
+  nav ul li {
+    
+    color:whitesmoke;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 20px;  
+  }
