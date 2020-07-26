@@ -1,11 +1,39 @@
 
-.container{
-    width: 960px;
-    margin: auto;
-}
+
 .row {
     display: flex;
   }
+  
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+
+  .slider .fas {
+    position: absolute;
+    font-size: 50px;
+    top: 50%;
+    
+}
+.slider .fas:first-of-type{
+    left: 20px;
+   
+
+}
+.slider .fas:last-of-type{
+    right: 20px;
+    
+}
+
+.position-relative{
+    position: relative;
+}
+
+.vision
+ {
+    padding-top: 30px;
+}
 nav {
     background:gray;
 
@@ -30,3 +58,4 @@ nav {
     margin-right: 15px;
     padding: 20px;  
   }
+
