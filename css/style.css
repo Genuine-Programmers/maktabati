@@ -19,11 +19,17 @@ figure {
 .flex-column {
   flex-direction: column;
 }
+.display-none {
+  display: none;
+}
+
 .row .col + .col {
   margin-left: 30px;
 }
 /* main */
-main article section, .slider, .vision {
+main article section,
+.slider,
+.vision {
   padding-top: 30px;
 }
 main article section:last-of-type {
@@ -140,4 +146,42 @@ nav ul li {
   display: inline-block;
   margin-right: 15px;
   padding: 20px;
+}
+/* slider sponsored */
+.sponsored img {
+  width: 345px;
+}
+.sponsored .details {
+  padding-left: 30px;
+  padding-top: 0;
+  justify-content: center;
+}
+.sponsored .details button {
+  border: 0;
+  background-color: black;
+  color: #fff;
+  padding: 8px 25px;
+  align-self: flex-end;
+}
+.sponsored .details button:hover {
+  transition: 0.2s ease-in;
+  background-color: #616161;
+}
+.slider-controls {
+  justify-content: center;
+  padding-top: 30px;
+}
+.slider-controls .control {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 5px solid black;
+}
+.slider-controls .control.active {
+  background-color: black;
+}
+.slider-controls .control + .control {
+  margin-left: 10px;
 }
