@@ -7,18 +7,18 @@ function BooksGenerator(
   author,
   category,
   description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, beatae.",
-  viewedTimes = 0,
-  isSponsored = false
+  isSponsored = false,
+  viewedTimes
 ) {
   this.title = title;
   this.author = author;
   this.category = category;
   this.publishedYear = publishedYear;
   this.description = description;
-  this.cover = `./images/${title}.jpeg`;
-  this.pdf = `./images/${title}.pdf`;
+  this.cover = `./images/${title}.jpg`;
+  this.pdf = `./pdf/${title}.pdf`;
   this.isSponsored = isSponsored;
-  this.viewedTimes = viewedTimes;
+  this.viewedTimes = 0;
   allBooks.push(this);
 }
 
