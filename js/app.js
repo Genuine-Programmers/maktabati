@@ -6,9 +6,9 @@ function BooksGenerator(
   publishedYear,
   author,
   category,
-  viewedTimes,
-  isSponsored = false,
-  description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, beatae."
+  description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, beatae.",
+  viewedTimes = 0,
+  isSponsored = false
 ) {
   this.title = title;
   this.author = author;
@@ -65,17 +65,24 @@ new BooksGenerator(
   "Two poets in a London park at sunset, debating on the attributes of poetry and whether it's really a metaphor for anarchy. A group that meets in secret, planning to overthrow the world order. Disguises and deceptions, ideals and ideology. A medley of themes and genres makes this a great read for anyone who's a fan of Chesterton and his iconic Father Brown."
  );
 
- 
-const books = [
-  "jane eyre",
-  "pride and prejudice",
-  "leo tolstoy",
-  "short science fiction collection",
-  "twenty thousand leagues under the sea",
-  "the war of the worlds",
+
   "anne of green gables",
+  1908,
+  "Lucy Maud Montgomery",
+  "History",
+  "Montgomery’s literary classic recounts the exciting adventures undertaken by the fiery eleven-year-old Anne Shirley, an orphan girl accidentally adopted by middle aged siblings Matthew and Marilla Cuthbert. A coming-of-age novel, Anne of Green Gables focuses on Anne’s new life at Green Gables farm in Avonlea and her adjustment into the Prince Edward Island community."
+);
+new BooksGenerator(
   "the decameron",
+  1886,
+  "Giovanni Boccaccio",
+  "History",
+  "Giovanni Boccaccio’s The Decameron is a collection of novellas or short novels written during the 14th century. There are 100 tales contained in the book which is presented together. The book’s title The Decameron combines the two Greek words “deka” meaning ten and “hemera” meaning day. The title can be literally translated as “ten day,” which is also the time frame in which the stories are told by the 7 young women and 3 young men."
+);
+new BooksGenerator(
   "the three musketeers",
-  "alice's adventures in wonderland",
-  "tarzan of the apes",
-];
+  1844,
+  "Alexandre Dumas",
+  "History",
+  "The Three Musketeers follows the adventures of the young Gascon nobleman, D’Artagnan and his three trusted friends who served as musketeers in the king’s regiment – Athos, Porthos & Aramis. Written by Alexandre Dumas, the book was a bestseller during the time of its publication and it remains so even today. It follows the timeless theme of friendship and bravery."
+);
