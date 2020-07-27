@@ -7,16 +7,14 @@ function renderCategory() {
     const categoryRomance = document.querySelectorAll(".category-romance-column");
     const categoryHistory = document.querySelectorAll(".category-history-column");
     const categoryScience = document.querySelectorAll(".category-science-column");
-    console.log(categoryRomance);
-    console.log(categoryFantasy);
-    console.log(categoryScience);
+   
     const romance = [];
     const fantasy = [];
     const history = [];
     const scienceFiction = [];
 
     allBooks.forEach(function(book ){
-        console.log(book);
+      
         if (book.category=== "Romance")
         romance.push(book);
   
@@ -30,13 +28,13 @@ function renderCategory() {
         
         if (book.category === "Sience Fiction")
             {   
-              console.log(book);
+            
                 scienceFiction.push(book);
             }
     })
     
 for (let index = 0; index < categoryRomance.length; index++) {
-    console.log();
+  
 
 
     categoryRomance[index].src= romance[index].cover;
@@ -53,8 +51,7 @@ for (let index = 0; index < categoryHistory.length; index++) {
 }
 
     for (let index = 0; index < categoryScience.length; index++) {
-        console.log(categoryScience[index]);
-        console.log(scienceFiction[index]);
+      
         categoryScience[index].src= scienceFiction[index].cover;
        categoryScience[index].alt= scienceFiction[index].title;    
     }
