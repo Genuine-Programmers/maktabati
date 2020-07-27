@@ -4,8 +4,8 @@ function BooksGenerator(
   title,
   publishedYear,
   author,
-  viewedTimes,
   category,
+  viewedTimes,
   isSponsored = false,
   description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, beatae."
 ) {
