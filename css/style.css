@@ -147,6 +147,9 @@ nav ul li {
   margin-right: 15px;
   padding: 20px;
 }
+.most-recent img{
+  width: 100%;
+}
 
 .category-fantasy-column , .category-romance-column, .category-history-column,.category-science-column{
   width: 100%;
@@ -172,7 +175,6 @@ nav ul li {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
-=======
 /* slider sponsored */
 .sponsored img {
   width: 345px;
@@ -211,4 +213,5 @@ nav ul li {
 .slider-controls .control + .control {
   margin-left: 10px;
 }
+
 
