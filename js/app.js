@@ -15,7 +15,7 @@ function BooksGenerator(
   this.category = category;
   this.publishedYear = publishedYear;
   this.description = description;
-  this.cover = `./images/${title}.jpeg`;
+  this.cover = `./images/${title}.jpg`;
   this.pdf = `./images/${title}.pdf`;
   this.isSponsored = isSponsored;
   this.viewedTimes = viewedTimes;
@@ -61,6 +61,7 @@ new BooksGenerator(
   "short science fiction collection",
   1931,
   "Various",
+  "Sience Fiction",
   "Science fiction (abbreviated SF or sci-fi with varying punctuation and case) is a broad genre of fiction that often involves sociological and technical speculations based on current or future science or technology. This is a reader-selected collection of short stories originally published between 1931 and 1963, that entered the US public domain when their copyright was not renewed.",
 );
 new BooksGenerator(
@@ -105,3 +106,4 @@ new BooksGenerator(
   "History",
   "The Three Musketeers follows the adventures of the young Gascon nobleman, D’Artagnan and his three trusted friends who served as musketeers in the king’s regiment – Athos, Porthos & Aramis. Written by Alexandre Dumas, the book was a bestseller during the time of its publication and it remains so even today. It follows the timeless theme of friendship and bravery."
 );
+
