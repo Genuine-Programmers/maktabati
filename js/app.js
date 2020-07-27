@@ -6,9 +6,11 @@ function BooksGenerator(
   publishedYear,
   author,
   category,
+
   viewedTimes,
   isSponsored = false,
   description,
+
 ) {
   this.title = title;
   this.publishedYear = publishedYear;
@@ -16,7 +18,7 @@ function BooksGenerator(
   this.category = category;
   this.description = description;
   this.cover = `./images/${title}.jpg`;
-  this.pdf = `./images/${title}.pdf`;
+  this.pdf = `./pdf/${title}.pdf`;
   this.isSponsored = isSponsored;
   this.viewedTimes = 0;
   allBooks.push(this);
