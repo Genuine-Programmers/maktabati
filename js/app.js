@@ -6,13 +6,14 @@ function BooksGenerator(
   publishedYear,
   author,
   category,
+  viewedTimes,
+  isSponsored = false,
   description,
-  isSponsored = false
 ) {
   this.title = title;
+  this.publishedYear = publishedYear;
   this.author = author;
   this.category = category;
-  this.publishedYear = publishedYear;
   this.description = description;
   this.cover = `./images/${title}.jpg`;
   this.pdf = `./images/${title}.pdf`;
@@ -44,6 +45,7 @@ new BooksGenerator(
   "Austen’s timeless romantic classic, follows the lives of the five Bennett sisters, who live in a time where an advantageous marriage and social status are considered a fundamental for any woman to stand a fair chance at life. Set at the turn of the 19th century, Pride and Prejudice catches a perfect glimpse not only of a time when women were socially and economically dependent solely on their marital status, but also as an age of enlightenment and witness of the French Revolution."
 );
 new BooksGenerator(
+
   "frankenstein",
   1851,
   "Mary Wollstonecraft Shelley",
@@ -86,7 +88,7 @@ new BooksGenerator(
   " G. K. Chesterton",
   "fantasy",
   "Two poets in a London park at sunset, debating on the attributes of poetry and whether it's really a metaphor for anarchy. A group that meets in secret, planning to overthrow the world order. Disguises and deceptions, ideals and ideology. A medley of themes and genres makes this a great read for anyone who's a fan of Chesterton and his iconic Father Brown."
-);
+ );
 new BooksGenerator(
   "anne of green gables",
   1908,
@@ -110,4 +112,3 @@ new BooksGenerator(
   "The Three Musketeers follows the adventures of the young Gascon nobleman, D’Artagnan and his three trusted friends who served as musketeers in the king’s regiment – Athos, Porthos & Aramis. Written by Alexandre Dumas, the book was a bestseller during the time of its publication and it remains so even today. It follows the timeless theme of friendship and bravery."
 );
 
-BooksGenerator.prototype.makeSponsored;
