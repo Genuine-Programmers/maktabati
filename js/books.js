@@ -30,10 +30,10 @@ function renderMostViewed() {
   BooksMostViewed.reverse();
 
   let imgMostViewed = document.querySelectorAll(".most-viewed .col img");
-  console.log(imgMostViewed);
   for (let index = 0; index < 4; index++) {
     imgMostViewed[index].setAttribute("src", BooksMostViewed[index].cover);
     imgMostViewed[index].setAttribute("alt", BooksMostViewed[index].title);
+    imgMostViewed[index].setAttribute("title", BooksMostViewed[index].title);
   }
 }
 
@@ -51,6 +51,7 @@ function mostRecentcat() {
   for (let index = 0; index < MostRecentbooks.length; index++) {
     MostRecentbooks[index].src = MostRecentarr[index].cover;
     MostRecentbooks[index].alt = MostRecentarr[index].title;
+    MostRecentbooks[index].title = MostRecentarr[index].title;
   }
 }
 mostRecentcat();
@@ -82,18 +83,56 @@ function renderCategory() {
   for (let index = 0; index < categoryRomance.length; index++) {
     categoryRomance[index].src = romance[index].cover;
     categoryRomance[index].alt = romance[index].title;
+    categoryRomance[index].title = romance[index].title;
   }
   for (let index = 0; index < categoryFantasy.length; index++) {
     categoryFantasy[index].src = fantasy[index].cover;
     categoryFantasy[index].alt = fantasy[index].title;
+    categoryFantasy[index].title = fantasy[index].title;
   }
   for (let index = 0; index < categoryHistory.length; index++) {
     categoryHistory[index].src = history[index].cover;
     categoryHistory[index].alt = history[index].title;
+    categoryHistory[index].title = history[index].title;
   }
 
   for (let index = 0; index < categoryScience.length; index++) {
     categoryScience[index].src = scienceFiction[index].cover;
     categoryScience[index].alt = scienceFiction[index].title;
+    categoryScience[index].title = scienceFiction[index].title;
   }
 } // for the function
+
+// Generate random numbers 
+function generateNumber() {
+  let randomNumber = Math.floor(
+    Math.random() * allBooks.length);
+  return randomNumber;
+}
+
+//reneder Books inside Audio Books section
+function renderAudioBooks() {
+
+  const audioBooksArr = []; 
+
+  let imgAudioBooks = document.querySelectorAll(".audio-books img");
+
+  for (let i = 0; i < 4; i++) {
+
+    let randomNum = generateNumber();
+    let checkRandomNum = audioBooksArr.includes(randomNum);
+    imgAudioBooks[i].src = allBooks[randomNum].cover;
+    imgAudioBooks[i].alt = allBooks[randomNum].title;
+    imgAudioBooks[i].title = allBooks[randomNum].title;
+    
+    while(checkRandomNum === true){
+    randomNum = generateNumber();
+    checkRandomNum = audioBooksArr.includes(randomNum);
+    imgAudioBooks[i].src = allBooks[randomNum].cover;
+    imgAudioBooks[i].alt = allBooks[randomNum].title;
+    imgAudioBooks[i].title = allBooks[randomNum].title;
+    }
+    audioBooksArr.push(randomNum);
+  }
+}
+renderAudioBooks();
