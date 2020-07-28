@@ -238,6 +238,7 @@ nav ul li {
   margin-left: 10px;
 }
 
+
 .overlay {
   height: 100%;
   width: 0;
@@ -289,5 +290,11 @@ nav ul li {
 }
 .books img{
   cursor: pointer;
+}
+
+
+.audio-books img{
+  width: 220px;
+  height: 300px;
 }
 
