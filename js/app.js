@@ -16,6 +16,7 @@ function BooksGenerator(
   this.description = description;
   this.cover = `./images/${title}.jpg`;
   this.pdf = `./pdf/${title}.pdf`;
+  this.audio = `./audio/${title}.mp3`;
   this.isSponsored = isSponsored;
   this.viewedTimes = 0;
   allBooks.push(this);

@@ -8,6 +8,24 @@ figure {
 .row {
   display: flex;
 }
+.align-center{
+  align-items: center;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.btn {
+  border: 0;
+  background-color: black;
+  color: #fff;
+  padding: 8px 25px;
+  display: block;
+  width: fit-content;
+
+}
 .scrollable {
   height: 300px;
   overflow: scroll;
@@ -220,4 +238,56 @@ nav ul li {
   margin-left: 10px;
 }
 
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.6);
+  overflow-x: hidden;
+  transition: 0.5s;
+
+}
+
+.content-overlay {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: -150%;
+  height: 100%;
+  z-index: 2;
+  transform: translateX(50%);
+  transition: .5s;
+  transition-delay: .5s;
+  align-items: center;
+}
+.content-overlay .details{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+.books img{
+  cursor: pointer;
+}
 
