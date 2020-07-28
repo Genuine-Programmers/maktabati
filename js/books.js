@@ -103,6 +103,50 @@ function renderCategory() {
   }
 } // for the function
 
+
+let figures = document.querySelectorAll(".books img");
+for (let figure = 0; figure < figures.length; figure++) {
+  figures[figure].addEventListener("click", openOverlay);
+  figures[figure].addEventListener("click", overlayContent);
+}
+
+function openOverlay() {
+  document.querySelector(".overlay").style.width = "100%";
+  document.querySelector(".content-overlay").style.right = "50%";
+  
+}
+
+function closeOverlay() {
+  document.querySelector(".overlay").style.width = "0%";
+  document.querySelector(".content-overlay").style.right = "-1000px";
+  localStorage.clear();
+}
+function overlayContent() {
+console.log(event);
+let title = event.path[0].alt
+console.log(title);
+// 
+let book= allBooks.find(book=>book.title===title)
+
+localStorage.setItem('book',JSON.stringify(book));
+let details = document.querySelector(".content-overlay .details");
+let cover = document.querySelector(".content-overlay img");
+console.log(details);
+
+
+cover.src= book.cover
+cover.alt=book.title;
+cover.title=book.title;
+    details.children[0].innerHTML = book.title;
+    details.children[1].children[0].innerHTML = book.author;
+    details.children[2].children[0].innerHTML = book.publishedYear
+    details.children[3].innerHTML = book.category;
+    details.children[4].innerHTML = book.description;
+    details.children[5].children[0].src = book.audio;
+  
+}
+
+
 // Generate random numbers 
 function generateNumber() {
   let randomNumber = Math.floor(
@@ -136,3 +180,4 @@ function renderAudioBooks() {
   }
 }
 renderAudioBooks();
+
