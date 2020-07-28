@@ -97,3 +97,15 @@ function renderCategory() {
     categoryScience[index].alt = scienceFiction[index].title;
   }
 } // for the function
+
+let figures = document.querySelectorAll(".books img");
+for (let figure = 0; figure < figures.length; figure++) {
+  figures[figure].addEventListener("click", openNav);
+}
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+ 
