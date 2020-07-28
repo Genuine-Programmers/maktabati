@@ -1,6 +1,12 @@
 figure {
   margin: 0;
 }
+a:hover {
+  transition: 0.2s ease-in;
+  text-decoration: none;
+  color: #fff;
+  background-color: #616161;
+}
 .container {
   width: 960px;
   margin: 0 auto;
@@ -26,6 +32,19 @@ figure {
   display: block;
   width: fit-content;
 
+}
+article.books-suggestions .row {
+  padding: 30px 0;
+}
+.btn {
+  border: 0;
+  background-color: black;
+  color: #fff;
+  padding: 8px 25px;
+  display: block;
+  width: fit-content;
+}
+.btn:hover {
 }
 .scrollable {
   height: 300px;
@@ -130,7 +149,7 @@ textarea {
   margin: 0 auto;
 }
 
-#copyright {
+.copyright {
   background-color: gray;
   height: 100px;
   text-align: center;
@@ -174,38 +193,42 @@ nav ul li {
   padding: 20px;
 }
 
-.most-viewed .col img {
+.most-viewed .col img,
+.book-suggestions .col img {
   width: 100%;
   height: 100%;
 }
 
-.most-recent img{
+.most-recent img {
   width: 100%;
 }
 
-.category-fantasy-column , .category-romance-column, .category-history-column,.category-science-column{
+.category-fantasy-column,
+.category-romance-column,
+.category-history-column,
+.category-science-column {
   width: 100%;
   height: 100%;
   padding-right: 0;
 }
-::-webkit-scrollbar  {
+::-webkit-scrollbar {
   width: 10px;
   background: transparent;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #000000; 
+  background: #000000;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 /* slider sponsored */
 .sponsored img {
@@ -244,6 +267,16 @@ nav ul li {
 }
 .slider-controls .control + .control {
   margin-left: 10px;
+}
+
+
+/* books-suggestions */
+.books-suggestions img {
+  width: 220px;
+  height: 300px;
+}
+.books-suggestions .btn {
+  margin: 0 auto;
 }
 
 .overlay {
@@ -307,3 +340,4 @@ nav ul li {
   width: 220px;
   height: 300px;
 }
+

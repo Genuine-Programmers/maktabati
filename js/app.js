@@ -133,6 +133,7 @@ function sponsoredSlider() {
     }
   }
 }
+// function to refresh the slider each 5 sec
 let indexOfSlider = 1;
 let controls = document.querySelectorAll(".control");
 for (let control = 0; control < controls.length; control++) {
@@ -157,3 +158,36 @@ function sliderControler() {
 }
 sponsoredSlider();
 let sliderTimer = setInterval(refreshSlider, 5000);
+
+// random books
+
+function randomBooks() {
+  let count = 0;
+  const numberOfBooksToDisplay = 4;
+  const books = [];
+  // eslint-disable-next-line no-constant-condition
+  while (true) {
+    // get random number
+    let randomIndex = Math.floor(Math.random() * allBooks.length);
+    // if the product is not unique then repeat
+    if (books.includes(allBooks[randomIndex])) continue;
+    // if all okay then add a product
+    books.push(allBooks[randomIndex]);
+    // increment the count
+    count++;
+    // ic count === the number of images that need to be displayed then stop the loop
+    if (count === numberOfBooksToDisplay) break;
+  }
+  return books;
+}
+
+function displayBooksInIndex() {
+  const books = document.querySelectorAll(".books-suggestions img");
+  const booksToDisplay = randomBooks();
+  for (let book = 0; book < books.length; book++) {
+    books[book].src = booksToDisplay[book].cover;
+    books[book].alt = booksToDisplay[book].title;
+    books[book].title = booksToDisplay[book].title;
+  }
+}
+displayBooksInIndex();
