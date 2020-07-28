@@ -7,6 +7,7 @@ figure {
 }
 .row {
   display: flex;
+ 
 }
 .align-center{
   align-items: center;
@@ -40,9 +41,16 @@ figure {
 .display-none {
   display: none;
 }
-
+.text-center{
+  text-align: center;
+}
 .row .col + .col {
   margin-left: 30px;
+}
+.col { 
+  margin-left: 30px;
+  width: 220px;
+
 }
 /* main */
 main article section,
@@ -238,7 +246,6 @@ nav ul li {
   margin-left: 10px;
 }
 
-
 .overlay {
   height: 100%;
   width: 0;
@@ -278,9 +285,11 @@ nav ul li {
   transition: 0.3s;
 }
 
+
 .overlay a:hover, .overlay a:focus {
   color: #f1f1f1;
 }
+
 
 .overlay .closebtn {
   position: absolute;
@@ -288,6 +297,7 @@ nav ul li {
   right: 45px;
   font-size: 60px;
 }
+
 .books img{
   cursor: pointer;
 }
@@ -297,4 +307,3 @@ nav ul li {
   width: 220px;
   height: 300px;
 }
-
