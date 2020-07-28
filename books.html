@@ -19,13 +19,34 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="books.html">Books</a></li>
-                    <li><a href="">Read</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-
     <main>
+        <div class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay()">&times;</a>
+        </div>
+        <div class="content-overlay row  container">
+            <div class="row">
+                <section class="cover">
+                    <img class="slider-img" src="https://placehold.it/480x450/ddd" alt="slider">
+                </section>
+                <section class="details justify-center row flex-column">
+                    <h2 class="title">Lorem, ipsum.</h2>
+                    <p>author: <span class="author"></span></p>
+                    <p>published year: <span class="published-year"></span></p>
+                    <p>category: <span class="category"></span></p>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolore
+                        architecto, aliquam molestias libero tempora accusantium nesciunt suscipit ipsam asperiores
+                        iusto, consequatur quos, expedita pariatur culpa? Est sed doloribus iure?</p>
+                    <div class="row justify-between">
+                        <audio src="./audio/frankenstein.mp3" controls></audio>
+                        <a href="./read.html" class="btn" >READ IT</a>
+                    </div>
+                </section>
+            </div>
+        </div>
         <article class="slider position-relative">
             <div class="container row sponsored">
                 <section class="cover">
@@ -95,13 +116,17 @@
             </section>
         </article>
 
+
         <article class="books" id="books">
+
             <section class="most-viewed">
                 <div class="container">
                     <h2 class="title">
                         Most Viewed
                     </h2>
-                    <div class="row">
+                   
+                        <div class="row" >
+                           
                         <figure class="col">
                             <img src="https://placehold.it/220x300/ddd" alt="https://placehold.it/220x300/ddd">
                         </figure>
@@ -117,6 +142,7 @@
                     </div>
                 </div>
             </section>
+                   
             <section class="most-recent">
                 <div class="container">
                     <h2 class="title">
@@ -164,37 +190,52 @@
                     <h2 class="title">
                         Categories
                     </h2>
+                    
+                    
+                   
+                   
                     <div class="row">
-                        <div class="scrollable row column flex-column">
+                      
+                            <div class="col">
+                                <h4 class="heading-of-category">Romance</h4>
+                                <div class="scrollable row column  flex-column">
+                                    <figure>
+                                        <img class="category-romance-column" src="https://placehold.it/220x300/ddd"
+                                            alt="https://placehold.it/220x300/ddd">
+                                    </figure>
+                                    <figure>
+                                        <img class="category-romance-column" src="https://placehold.it/220x300/ddd"
+                                            alt="https://placehold.it/220x300/ddd">
+                                    </figure>
+                                    <figure>
+                                        <img class="category-romance-column" src="https://placehold.it/220x300/ddd"
+                                            alt="https://placehold.it/220x300/ddd">
+                                    </figure>
+                                </div>
+                            </div>
+                      <div class="col"> 
+                        <h4 class="heading-of-category">Fantasy</h4>
+                          <div class="scrollable row column flex-column">
 
-                            <figure>
-                                <img class="category-romance-column" src="https://placehold.it/220x300/ddd"
-                                    alt="https://placehold.it/220x300/ddd">
-                            </figure>
-                            <figure>
-                                <img class="category-romance-column" src="https://placehold.it/220x300/ddd"
-                                    alt="https://placehold.it/220x300/ddd">
-                            </figure>
-                            <figure>
-                                <img class="category-romance-column" src="https://placehold.it/220x300/ddd"
-                                    alt="https://placehold.it/220x300/ddd">
-                            </figure>
-                        </div>
-                        <div class="scrollable row column flex-column">
-                            <figure>
-                                <img class="category-fantasy-column" src="https://placehold.it/220x300/ddd"
-                                    alt="https://placehold.it/220x300/ddd">
-                            </figure>
-                            <figure>
-                                <img class="category-fantasy-column" src="https://placehold.it/220x300/ddd"
-                                    alt="https://placehold.it/220x300/ddd">
-                            </figure>
-                            <figure>
-                                <img class="category-fantasy-column" src="https://placehold.it/220x300/ddd"
-                                    alt="https://placehold.it/220x300/ddd">
-                            </figure>
-                        </div>
-                        <div class="scrollable row column flex-column">
+                          
+                       
+                        <figure>
+                            <img class="category-fantasy-column" src="https://placehold.it/220x300/ddd"
+                                alt="https://placehold.it/220x300/ddd">
+                        </figure>
+                        <figure>
+                            <img class="category-fantasy-column" src="https://placehold.it/220x300/ddd"
+                                alt="https://placehold.it/220x300/ddd">
+                        </figure>
+                        <figure>
+                            <img class="category-fantasy-column" src="https://placehold.it/220x300/ddd"
+                                alt="https://placehold.it/220x300/ddd">
+                        </figure>
+                    </div></div>
+                        
+                           <div class="col">
+                            <h4 class="heading-of-category">History</h4>
+                                <div class="scrollable row column flex-column">
                             <figure>
                                 <img class="category-history-column" src="https://placehold.it/220x300/ddd"
                                     alt="https://placehold.it/220x300/ddd">
@@ -207,21 +248,24 @@
                                 <img class="category-history-column" src="https://placehold.it/220x300/ddd"
                                     alt="https://placehold.it/220x300/ddd">
                             </figure>
-                        </div>
-                        <div class="scrollable row column flex-column">
-                            <figure>
-                                <img class="category-science-column" src="https://placehold.it/220x300/ddd"
-                                    alt="https://placehold.it/220x300/ddd">
-                            </figure>
-                            <figure>
-                                <img class="category-science-column" src="https://placehold.it/220x300/ddd"
-                                    alt="https://placehold.it/220x300/ddd">
-                            </figure>
-                            <figure>
-                                <img class="category-science-column" src="https://placehold.it/220x300/ddd"
-                                    alt="https://placehold.it/220x300/ddd">
-                            </figure>
-                        </div>
+                        </div></div>
+                       <div class="col">
+                        <h4 class="heading-of-category">Science fiction</h4>
+                         <div class="scrollable row column flex-column">
+                        <figure>
+                            <img class="category-science-column" src="https://placehold.it/220x300/ddd"
+                                alt="https://placehold.it/220x300/ddd">
+                        </figure>
+                        <figure>
+                            <img class="category-science-column" src="https://placehold.it/220x300/ddd"
+                                alt="https://placehold.it/220x300/ddd">
+                        </figure>
+                        <figure>
+                            <img class="category-science-column" src="https://placehold.it/220x300/ddd"
+                                alt="https://placehold.it/220x300/ddd">
+                        </figure>
+                    </div></div>
+                       
                     </div>
                 </div>
             </section>

@@ -13,6 +13,25 @@ a:hover {
 }
 .row {
   display: flex;
+ 
+}
+.align-center{
+  align-items: center;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.btn {
+  border: 0;
+  background-color: black;
+  color: #fff;
+  padding: 8px 25px;
+  display: block;
+  width: fit-content;
+
 }
 article.books-suggestions .row {
   padding: 30px 0;
@@ -41,9 +60,16 @@ article.books-suggestions .row {
 .display-none {
   display: none;
 }
-
+.text-center{
+  text-align: center;
+}
 .row .col + .col {
   margin-left: 30px;
+}
+.col { 
+  margin-left: 30px;
+  width: 220px;
+
 }
 /* main */
 main article section,
@@ -243,6 +269,7 @@ nav ul li {
   margin-left: 10px;
 }
 
+
 /* books-suggestions */
 .books-suggestions img {
   width: 220px;
@@ -251,3 +278,66 @@ nav ul li {
 .books-suggestions .btn {
   margin: 0 auto;
 }
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.6);
+  overflow-x: hidden;
+  transition: 0.5s;
+
+}
+
+.content-overlay {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: -150%;
+  height: 100%;
+  z-index: 2;
+  transform: translateX(50%);
+  transition: .5s;
+  transition-delay: .5s;
+  align-items: center;
+}
+.content-overlay .details{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+.books img{
+  cursor: pointer;
+}
+
+
+.audio-books img{
+  width: 220px;
+  height: 300px;
+}
+
