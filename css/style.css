@@ -44,15 +44,11 @@ article.books-suggestions .row {
   display: block;
   width: fit-content;
 }
-.btn:hover {
-}
+
 .scrollable {
   height: 300px;
   overflow: scroll;
   overflow-x: hidden;
-}
-.scrollable figure + figure {
-  margin-top: 30px;
 }
 .flex-column {
   flex-direction: column;
@@ -66,9 +62,6 @@ article.books-suggestions .row {
 .row .col + .col {
   margin-left: 30px;
 }
-.col { 
-  margin-left: 30px;
-  width: 220px;
 
 }
 /* main */
@@ -84,7 +77,10 @@ main article section:last-of-type {
 .categories .scrollable + .scrollable {
   margin-left: 30px;
 }
-
+.categories img{
+  height: 300px;
+  width: 210px !important;
+}
 #name,
 #email,
 #subject,
@@ -193,14 +189,9 @@ nav ul li {
   padding: 20px;
 }
 
-.most-viewed .col img,
-.book-suggestions .col img {
-  width: 100%;
-  height: 100%;
-}
-
-.most-recent img {
-  width: 100%;
+.col img{
+  width: 220px;
+  height: 300px;
 }
 
 .category-fantasy-column,
@@ -331,7 +322,7 @@ nav ul li {
   font-size: 60px;
 }
 
-.books img{
+.books img,.books-suggestions img{
   cursor: pointer;
 }
 

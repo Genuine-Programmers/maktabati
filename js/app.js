@@ -113,24 +113,25 @@ new BooksGenerator(
 
 // function to add content to the slider
 function sponsoredSlider() {
-  let covers = document.querySelectorAll(".cover img");
-  let details = document.querySelectorAll(".details");
+  let covers = document.querySelectorAll(".slider .cover img");
+  let details = document.querySelectorAll(".slider .details");
+  console.log(details);
   const sponsored = [];
   // eslint-disable-next-line no-undef
   allBooks.forEach((book) => {
     if (book.isSponsored) sponsored.push(book);
   });
   for (let index = 0; index < sponsored.length; index++) {
+    console.table(sponsored[index]);
     covers[index].src = sponsored[index].cover;
-    for (let child = 0; child < details[index].children.length; child++) {
-      details[index].children[0].innerHTML = sponsored[index].title;
-      details[index].children[1].children[0].innerHTML =
-        sponsored[index].author;
-      details[index].children[2].children[0].innerHTML =
-        sponsored[index].publishedYear;
-      details[index].children[3].innerHTML = sponsored[index].category;
-      details[index].children[4].innerHTML = sponsored[index].description;
-    }
+
+    details[index].children[0].innerHTML = sponsored[index].title;
+    console.log(details[index].children[0]);
+    details[index].children[1].children[0].innerHTML = sponsored[index].author;
+    details[index].children[2].children[0].innerHTML =
+      sponsored[index].publishedYear;
+    details[index].children[3].innerHTML = sponsored[index].category;
+    details[index].children[4].innerHTML = sponsored[index].description;
   }
 }
 // function to refresh the slider each 5 sec
@@ -191,3 +192,56 @@ function displayBooksInIndex() {
   }
 }
 displayBooksInIndex();
+
+// function to redirect the user to the targeted book
+const sponsoredBtn = document.querySelectorAll(".sponsored .btn");
+console.log(sponsoredBtn);
+for (let btn = 0; btn < sponsoredBtn.length; btn++) {
+  sponsoredBtn[btn].addEventListener("click", redirect);
+}
+
+function redirect() {
+  let title = event.path[1].children[0].innerHTML;
+  let book = allBooks.find((book) => book.title === title);
+  console.log(book);
+  localStorage.setItem("book", JSON.stringify(book));
+}
+
+let figures = document.querySelectorAll(".col img");
+for (let figure = 0; figure < figures.length; figure++) {
+  figures[figure].addEventListener("click", openOverlay);
+  figures[figure].addEventListener("click", overlayContent);
+}
+
+function openOverlay() {
+  document.querySelector(".overlay").style.width = "100%";
+  document.querySelector(".content-overlay").style.right = "50%";
+}
+
+function closeOverlay() {
+  document.querySelector(".overlay").style.width = "0%";
+  document.querySelector(".content-overlay").style.right = "-1000px";
+  localStorage.clear();
+}
+function overlayContent() {
+  console.log(event);
+  let title = event.path[0].alt;
+  console.log(title);
+  //
+  let book = allBooks.find((book) => book.title === title);
+
+  localStorage.setItem("book", JSON.stringify(book));
+  let details = document.querySelector(".content-overlay .details");
+  let cover = document.querySelector(".content-overlay img");
+  console.log(details);
+
+  cover.src = book.cover;
+  cover.alt = book.title;
+  cover.title = book.title;
+  details.children[0].innerHTML = book.title;
+  details.children[1].children[0].innerHTML = book.author;
+  details.children[2].children[0].innerHTML = book.publishedYear;
+  details.children[3].innerHTML = book.category;
+  details.children[4].innerHTML = book.description;
+  details.children[5].children[0].src = book.audio;
+}
