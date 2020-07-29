@@ -332,12 +332,8 @@ nav ul li {
   height: 300px;
 }
 
-.swal2-confirm, .swal2-styled {
-  background-color: black;
-  color: red;
-}
-
 #charNum {
   text-align: right;
   margin-top: -20px;
 }
+
