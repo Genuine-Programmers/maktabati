@@ -245,3 +245,36 @@ function overlayContent() {
   details.children[4].innerHTML = book.description;
   details.children[5].children[0].src = book.audio;
 }
+
+
+// alert message 
+function popUp(){
+  
+}
+
+var contactButton = document.getElementById("contactForm");
+
+contactButton.addEventListener('submit', function(){
+  event.preventDefault();
+  Swal.fire({
+    icon: 'success',
+    title: 'Thanks for contacting us',
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    },
+    timer: 3000
+  })
+});
+
+function countChar(val) {
+  var charNum = document.getElementById('charNum');
+  var len = val.value.length;
+  if (len >= 100) {
+   charNum.innerHTML = "100/100";
+  } else {
+    charNum.innerHTML = len+'/100';
+  }
+};
