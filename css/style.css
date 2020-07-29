@@ -1,11 +1,25 @@
+:root{
+  --bg-color:linear-gradient(180deg, #640E27 25%, #000000 100%);
+  --bg-rev-color:linear-gradient(0deg, #640E27 25%, #000000 100%);
+}
+body{
+  line-height: 1.5;
+}
+h2{
+  font-size: 42px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color :#640E27;
+}
+p{
+  font-family: 'PT Serif', serif;
+  font-size: 18px;
+}
 figure {
   margin: 0;
 }
 a:hover {
   transition: 0.2s ease-in;
   text-decoration: none;
-  color: #fff;
-  background-color: #616161;
 }
 .container {
   width: 960px;
@@ -31,7 +45,11 @@ a:hover {
   padding: 8px 25px;
   display: block;
   width: fit-content;
-
+}
+.btn:hover{
+  transition: .3s;
+  background-image: var(--bg-rev-color);
+  color:white
 }
 article.books-suggestions .row {
   padding: 30px 0;
@@ -49,6 +67,12 @@ article.books-suggestions .row {
   height: 300px;
   overflow: scroll;
   overflow-x: hidden;
+}
+.scrollable img{
+  margin-bottom: 30px;
+}
+.scrollable figure:last-of-type img{
+  margin-bottom: 0;
 }
 .flex-column {
   flex-direction: column;
@@ -134,6 +158,7 @@ textarea {
 
 #footerTitle {
   text-align: center;
+  margin-bottom: ;
 }
 
 #hrFooter {
@@ -146,29 +171,25 @@ textarea {
 }
 
 .copyright {
-  background-color: gray;
-  height: 100px;
+
   text-align: center;
 }
-
-.slider .fas {
-  position: absolute;
-  font-size: 50px;
-  top: 50%;
+.copyright a{
+  color: black;
+  text-decoration: underline;
 }
-.slider .fas:first-of-type {
-  left: 20px;
+.slider,
+.books section{
+  padding-top: 60px;
 }
-.slider .fas:last-of-type {
-  right: 20px;
+.books section:last-of-type,.books-suggestions{
+  padding-bottom: 60px;
 }
-
 .position-relative {
   position: relative;
 }
 
 nav {
-  background: gray;
 }
 nav .container {
   justify-content: space-between;
@@ -177,18 +198,31 @@ nav .logo {
   display: flex;
   align-items: center;
 }
+nav .logo img{
+  width: 220px;
+  height: 100px;
+}
 nav ul {
-  display: inline;
-
-  border-width: 5px;
+  display: flex;
+margin: 0;
+padding: 0;
+list-style: none;
+height: 100px;
 }
-nav ul li {
-  color: whitesmoke;
-  display: inline-block;
-  margin-right: 15px;
-  padding: 20px;
+nav ul li{
+  display: flex;
 }
 
+nav ul li a{
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  color: black;
+}
+nav ul li a.active,nav ul li a:hover,.btn{
+  background-image: var(--bg-color);
+  color: white;
+}
 .col img{
   width: 220px;
   height: 300px;
