@@ -11,6 +11,29 @@
 </head>
 
 <body>
+    <div class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay()">&times;</a>
+    </div>
+    <div class="content-overlay row  container">
+        <div class="row">
+            <section class="cover">
+                <img class="slider-img" src="https://placehold.it/480x450/ddd" alt="slider">
+            </section>
+            <section class="details justify-center row flex-column">
+                <h2 class="title">Lorem, ipsum.</h2>
+                <p>author: <span class="author"></span></p>
+                <p>published year: <span class="published-year"></span></p>
+                <p>category: <span class="category"></span></p>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolore
+                    architecto, aliquam molestias libero tempora accusantium nesciunt suscipit ipsam asperiores
+                    iusto, consequatur quos, expedita pariatur culpa? Est sed doloribus iure?</p>
+                <div class="row justify-between">
+                    <audio src="./audio/frankenstein.mp3" controls></audio>
+                    <a href="./read.html" class="btn">READ IT</a>
+                </div>
+            </section>
+        </div>
+    </div>
     <header>
         <nav>
             <div class="container row">
@@ -38,7 +61,7 @@
                     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolore
                         architecto, aliquam molestias libero tempora accusantium nesciunt suscipit ipsam asperiores
                         iusto, consequatur quos, expedita pariatur culpa? Est sed doloribus iure?</p>
-                    <button>READ IT</button>
+                    <a href="./read.html" class="btn">READ IT</a>
                 </section>
             </div>
             <div class="container row sponsored display-none">
@@ -53,7 +76,7 @@
                     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolore
                         architecto, aliquam molestias libero tempora accusantium nesciunt suscipit ipsam asperiores
                         iusto, consequatur quos, expedita pariatur culpa? Est sed doloribus iure?</p>
-                    <button>READ IT</button>
+                    <a href="./read.html" class="btn">READ IT</a>
                 </section>
             </div>
             <div class="container row sponsored display-none">
@@ -68,7 +91,7 @@
                     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolore
                         architecto, aliquam molestias libero tempora accusantium nesciunt suscipit ipsam asperiores
                         iusto, consequatur quos, expedita pariatur culpa? Est sed doloribus iure?</p>
-                    <button>READ IT</button>
+                    <a href="./read.html" class="btn">READ IT</a>
                 </section>
             </div>
             <div class="container row sponsored display-none">
@@ -83,7 +106,7 @@
                     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolore
                         architecto, aliquam molestias libero tempora accusantium nesciunt suscipit ipsam asperiores
                         iusto, consequatur quos, expedita pariatur culpa? Est sed doloribus iure?</p>
-                    <button>READ IT</button>
+                    <a href="./read.html" class="btn">READ IT</a>
                 </section>
             </div>
             <section class="slider-controls row">
@@ -93,8 +116,6 @@
                 <div class="control" data-index="3"></div>
             </section>
         </article>
-
-
         <article class="vision">
             <div class="container">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ratione neque vel explicabo unde
