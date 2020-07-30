@@ -220,7 +220,11 @@ function openOverlay() {
 
 function closeOverlay() {
   document.querySelector(".overlay").style.width = "0%";
+  // document.querySelector(".popup").style.width = "0%";
   document.querySelector(".content-overlay").style.right = "-1000px";
+  document.querySelector(".popup").style.right = "-1000px";
+  // document.querySelector(".popup").style.display = "none";
+  // document.querySelector("#popDetails").style.display = "none";
   localStorage.clear();
 }
 function overlayContent() {
@@ -255,7 +259,6 @@ function openPopup() {
 
 contactButton.addEventListener('submit', function(){
   event.preventDefault();
-  contactButton.addEventListener("click", openPopup);
   contactButton.addEventListener("click", openPopup);
 });
 

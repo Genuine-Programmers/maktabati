@@ -352,11 +352,10 @@ nav ul li {
   border: black solid;
   border-radius: 50px;
 }
-
-#popDetails {
+.popDetails {
   margin-top: 43%;
   margin-bottom: 35%;
-  left: 13px;
   position: absolute;
+  left: 13px;
   text-align: center;
 }
