@@ -337,3 +337,26 @@ nav ul li {
   margin-top: -20px;
 }
 
+.popup {
+  background-color: white;
+  position: fixed;
+  top: 25%;
+  right: -150%;
+  height: 320px;
+  width: 500px;
+  z-index: 2;
+  transform: translateX(50%);
+  transition: .5s;
+  transition-delay: .5s;
+  align-items: center;
+  border: black solid;
+  border-radius: 50px;
+}
+
+#popDetails {
+  margin-top: 43%;
+  margin-bottom: 35%;
+  left: 13px;
+  position: absolute;
+  text-align: center;
+}

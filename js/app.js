@@ -246,27 +246,17 @@ function overlayContent() {
   details.children[5].children[0].src = book.audio;
 }
 
-
-// alert message 
-function popUp(){
-  
-}
-
 var contactButton = document.getElementById("contactForm");
+
+function openPopup() {
+  document.querySelector(".overlay").style.width = "100%";
+  document.querySelector(".popup").style.right = "50%";
+}
 
 contactButton.addEventListener('submit', function(){
   event.preventDefault();
-  Swal.fire({
-    icon: 'success',
-    title: 'Thanks for contacting us',
-    showClass: {
-      popup: 'animate__animated animate__fadeInDown'
-    },
-    hideClass: {
-      popup: 'animate__animated animate__fadeOutUp'
-    },
-    timer: 3000
-  })
+  contactButton.addEventListener("click", openPopup);
+  contactButton.addEventListener("click", openPopup);
 });
 
 function countChar(val) {
