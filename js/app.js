@@ -221,6 +221,7 @@ function openOverlay() {
 function closeOverlay() {
   document.querySelector(".overlay").style.width = "0%";
   document.querySelector(".content-overlay").style.right = "-1000px";
+  document.querySelector(".popup").style.right = "-1000px";
   localStorage.clear();
 }
 function overlayContent() {
@@ -245,3 +246,25 @@ function overlayContent() {
   details.children[4].innerHTML = book.description;
   details.children[5].children[0].src = book.audio;
 }
+
+var contactButton = document.getElementById("contactForm");
+
+function openPopup() {
+  document.querySelector(".overlay").style.width = "100%";
+  document.querySelector(".popup").style.right = "50%";
+}
+
+contactButton.addEventListener('submit', function(){
+  event.preventDefault();
+  contactButton.addEventListener("click", openPopup);
+});
+
+function countChar(val) {
+  var charNum = document.getElementById('charNum');
+  var len = val.value.length;
+  if (len >= 100) {
+   charNum.innerHTML = "100/100";
+  } else {
+    charNum.innerHTML = len+'/100';
+  }
+};
