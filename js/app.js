@@ -223,6 +223,7 @@ function openOverlay() {
 function closeOverlay() {
   document.querySelector(".content-overlay").style.right = "-1000px";
   document.querySelector(".overlay").style.width = "0%";
+  document.querySelector(".popup").style.right = "-1000px";
   localStorage.clear();
 }
 function overlayContent() {
@@ -277,3 +278,25 @@ const oddSectionsOvserver = new IntersectionObserver((entries) => {
 oddSections.forEach((section) => {
   oddSectionsOvserver.observe(section);
 });
+
+var contactButton = document.getElementById("contactForm");
+
+function openPopup() {
+  document.querySelector(".overlay").style.width = "100%";
+  document.querySelector(".popup").style.right = "50%";
+}
+
+contactButton.addEventListener('submit', function(){
+  event.preventDefault();
+  contactButton.addEventListener("click", openPopup);
+});
+
+function countChar(val) {
+  var charNum = document.getElementById('charNum');
+  var len = val.value.length;
+  if (len >= 100) {
+   charNum.innerHTML = "100/100";
+  } else {
+    charNum.innerHTML = len+'/100';
+  }
+};
