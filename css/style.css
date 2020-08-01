@@ -33,7 +33,7 @@ a:hover {
   width: fit-content;
 
 }
-article.books-suggestions .row {
+article.books .row {
   padding: 30px 0;
 }
 .btn {
@@ -150,7 +150,9 @@ textarea {
   height: 100px;
   text-align: center;
 }
-
+.slider{
+  min-height: 600px;
+}
 .slider .fas {
   position: absolute;
   font-size: 50px;
@@ -266,7 +268,7 @@ nav ul li {
   width: 220px;
   height: 300px;
 }
-.books-suggestions .btn {
+.books a.btn {
   margin: 0 auto;
 }
 
@@ -332,3 +334,30 @@ nav ul li {
   height: 300px;
 }
 
+.books > section:nth-of-type(even) .container{
+  transition: 3s;
+}
+.left-to-right{
+  animation: left-to-right 1s
+}
+.right-to-left{
+  animation: left-to-right 1s
+}
+@keyframes left-to-right {
+  from {
+    transform: translateX(-100px);
+    opacity: .3;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;}
+}
+@keyframes right-to-left {
+  from {
+    transform: translateX(100px);
+    opacity: .3;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;}
+}
