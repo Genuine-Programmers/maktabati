@@ -10,11 +10,21 @@
     <link rel="stylesheet" href="./css/font-awesome.all.min.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animate.min.css"/>
 </head>
 
 <body>
     <div class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay()">&times;</a>
+    </div>
+    <div class="popup row container">
+        <div class="popDetails">
+            <h3>Thank you for getting in touch! </h3>
+            <h6>We appreciate you contacting us. One of our colleagues will get back in touch with you soon!</h6>
+            <h6>Have a great day!</h6>
+            <br>
+            <i class="fa fa-check fa-5x" aria-hidden="true"></i>
+        </div>
     </div>
     <div class="content-overlay row  container">
         <div class="row">
@@ -166,24 +176,24 @@
             <h3 id="footerTitle">Contact us</h3>
             <hr id="hrFooter">
             <div class="container" id="container_table">
-                <form>
+                <form id="contactForm">
                     <section class="row" id="lableRow">
                         <label for="name">Name:</label>
                         <label id="emailLable" for="email">Email:</label>
                     </section>
                     <section class="row">
-                        <input type="text" id="name" name="name" placeholder="First and last name">
+                        <input required type="text" id="name" name="name" placeholder="First and last name">
 
-                        <input type="email" id="email" name="email" placeholder="Your email">
+                        <input required type="email" id="email" name="email" placeholder="Your email">
                     </section>
 
                     <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject" placeholder="Subject">
+                    <input required type="text" id="subject" name="subject" placeholder="Subject">
 
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" placeholder="Write something.."></textarea>
-
-                    <input id="contactButton" type="submit" value="Submit">
+                    <textarea required onkeyup="countChar(this)" minlength="100" id="message" name="message" placeholder="Write something.."></textarea>
+                    <p id="charNum"></p>
+                    <button id="contactButton" type="submit" value="Submit">Submit</button>
 
                 </form>
         </section>
@@ -204,6 +214,7 @@
         </section>
 
     </footer>
+    <script src="./js/sweetalert2@9.js"></script>
     <script src="./js/app.js"></script>
 </body>
 
