@@ -110,6 +110,7 @@ article.books > .row {
   right: 20px;
   font-size: 14px;
   font-weight: 700;
+  z-index: 3;
 }
 .display-none {
   display: none;

@@ -196,7 +196,7 @@ function displayBooksInIndex() {
 displayBooksInIndex();
 
 // function to redirect the user to the targeted book
-const sponsoredBtn = document.querySelectorAll(".sponsored .btn .btn2");
+const sponsoredBtn = document.querySelectorAll(".sponsored .details .btn");
 console.log(sponsoredBtn);
 for (let btn = 0; btn < sponsoredBtn.length; btn++) {
   sponsoredBtn[btn].addEventListener("click", redirect);
