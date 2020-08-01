@@ -45,7 +45,7 @@ a:hover {
   border: 0;
   background-color: black;
   color: #fff;
-  padding: 8px 25px;
+  padding: 20px 25px;
   display: block;
   width: fit-content;
 }
@@ -56,6 +56,15 @@ a:hover {
 }
 article.books .row {
   padding: 30px 0;
+}
+.btn2 {
+  border: 0;
+  background-color: black;
+  color: #fff;
+  padding: 20px 25px;
+  display: block;
+  width: fit-content;
+
 }
 .btn {
   border: 0;
@@ -80,6 +89,12 @@ article.books .row {
 }
 .flex-column {
   flex-direction: column;
+}
+.Continue-reading {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 12px;
 }
 .display-none {
   display: none;

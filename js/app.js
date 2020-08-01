@@ -196,7 +196,7 @@ function displayBooksInIndex() {
 displayBooksInIndex();
 
 // function to redirect the user to the targeted book
-const sponsoredBtn = document.querySelectorAll(".sponsored .btn");
+const sponsoredBtn = document.querySelectorAll(".sponsored .btn .btn2");
 console.log(sponsoredBtn);
 for (let btn = 0; btn < sponsoredBtn.length; btn++) {
   sponsoredBtn[btn].addEventListener("click", redirect);
@@ -248,6 +248,20 @@ function overlayContent() {
   details.children[4].innerHTML = book.description;
   details.children[5].children[0].src = book.audio;
 }
+
+
+function continueReading (){
+  let book =localStorage.getItem('book');
+  console.log(book);
+  if (book == null) {
+    console.log('local storage is null');
+  
+   let continueReading = document.querySelector(".Continue-reading")
+
+   continueReading.classList.add("display-none")
+  }
+   }
+   continueReading ();
 
 const evenSections = document.querySelectorAll(
   ".books > section:nth-of-type(even) .container"
