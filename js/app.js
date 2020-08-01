@@ -218,12 +218,22 @@ for (let figure = 0; figure < figures.length; figure++) {
 function openOverlay() {
   document.querySelector(".overlay").style.width = "100%";
   document.querySelector(".content-overlay").style.right = "50%";
+  document.querySelector(".content-overlay").classList.add("transition-delay");
+  document.querySelector(".overlay").classList.remove("transition-delay");
 }
 
 function closeOverlay() {
   document.querySelector(".content-overlay").style.right = "-1000px";
   document.querySelector(".overlay").style.width = "0%";
-  document.querySelector(".popup").style.right = "-1000px";
+  try {
+    document.querySelector(".popup").style.right = "10000px";
+  } catch (error) {
+    console.log("");
+  }
+  document
+    .querySelector(".content-overlay")
+    .classList.remove("transition-delay");
+  document.querySelector(".overlay").classList.add("transition-delay");
   localStorage.clear();
 }
 function overlayContent() {
@@ -249,19 +259,18 @@ function overlayContent() {
   details.children[5].children[0].src = book.audio;
 }
 
-
-function continueReading (){
-  let book =localStorage.getItem('book');
+function continueReading() {
+  let book = localStorage.getItem("book");
   console.log(book);
-  if (book == null) {
-    console.log('local storage is null');
-  
-   let continueReading = document.querySelector(".Continue-reading")
+  if (book === null) {
+    console.log("local storage is null");
 
-   continueReading.classList.add("display-none")
+    let continueReading = document.querySelector(".Continue-reading");
+
+    continueReading.classList.add("display-none");
   }
-   }
-   continueReading ();
+}
+continueReading();
 
 const evenSections = document.querySelectorAll(
   ".books > section:nth-of-type(even) .container"
@@ -273,8 +282,8 @@ const oddSections = document.querySelectorAll(
 const evenSectionsOvserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     console.log(entry);
-    if (entry.isIntersecting) entry.target.classList.add("left-to-right");
-    else entry.target.classList.remove("left-to-right");
+    if (entry.isIntersecting) entry.target.classList.add("right-to-left");
+    else entry.target.classList.remove("right-to-left");
   });
 });
 
@@ -284,8 +293,8 @@ evenSections.forEach((section) => {
 const oddSectionsOvserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     console.log(entry);
-    if (entry.isIntersecting) entry.target.classList.add("right-to-left");
-    else entry.target.classList.remove("right-to-left");
+    if (entry.isIntersecting) entry.target.classList.add("left-to-right");
+    else entry.target.classList.remove("left-to-right");
   });
 });
 
@@ -299,18 +308,22 @@ function openPopup() {
   document.querySelector(".overlay").style.width = "100%";
   document.querySelector(".popup").style.right = "50%";
 }
-
-contactButton.addEventListener('submit', function(){
-  event.preventDefault();
-  contactButton.addEventListener("click", openPopup);
-});
+try {
+  contactButton.addEventListener("submit", function () {
+    console.log(event);
+    event.preventDefault();
+    openPopup();
+  });
+} catch (error) {
+  console.log("");
+}
 
 function countChar(val) {
-  var charNum = document.getElementById('charNum');
+  var charNum = document.getElementById("charNum");
   var len = val.value.length;
   if (len >= 100) {
-   charNum.innerHTML = "100/100";
+    charNum.innerHTML = "100/100";
   } else {
-    charNum.innerHTML = len+'/100';
+    charNum.innerHTML = len + "/100";
   }
-};
+}
