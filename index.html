@@ -5,22 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/font-awesome.all.min.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/animate.min.css"/>
+    <link rel="stylesheet" href="./css/animate.min.css" />
 </head>
 
 <body>
     <div class="Continue-reading">
-        <a href="./read.html"   class="btn">Continue Reading</a>
+        <a href="./read.html" class="btn">Continue Reading</a>
     </div>
     <div class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay()">&times;</a>
     </div>
-    <div class="popup row container">
+    <div class="popup row container transition-delay">
         <div class="popDetails">
             <h3>Thank you for getting in touch! </h3>
             <h6>We appreciate you contacting us. One of our colleagues will get back in touch with you soon!</h6>
@@ -45,30 +43,30 @@
                 <div class="row justify-between">
                     <audio src="./audio/frankenstein.mp3" controls></audio>
                     <a href="./read.html" class="btn">READ IT</a>
-                   
-                   
+
+
                 </div>
             </section>
         </div>
     </div>
     <header>
         <nav>
-            
-
             <div class="container row">
                 <article class="logo">
                     <img src="./images/logo.png" alt="logo">
                 </article>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="books.html">Books</a></li>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i>&emsp;Home</a></li>
+                    <li><a href="#vision"><i class="far fa-lightbulb"></i>&emsp;Vision</a></li>
+                    <li><a href="#contact-us"><i class="fas fa-user"></i>&emsp;Contact</a></li>
+                    <li><a href="books.html"><i class="fas fa-book-reader"></i>&emsp;Books</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <main>
         <article class="slider position-relative">
-            <div class="container row sponsored">
+            <div class="container row sponsored left-to-right">
                 <section class="cover">
                     <img class="slider-img" src="https://placehold.it/480x450/ddd" alt="slider">
                 </section>
@@ -135,7 +133,7 @@
                 <div class="control" data-index="3"></div>
             </section>
         </article>
-        <article class="vision">
+        <article class="vision" id="vision">
             <div class="container">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ratione neque vel explicabo unde
                     ullam cumque voluptate culpa, ex consequatur porro deserunt minima aperiam! Quam expedita dolorum
@@ -182,8 +180,8 @@
     </main>
 
     <footer>
-        <section>
-            <h3 id="footerTitle">Contact us</h3>
+        <section class="contact-us" id="contact-us">
+            <h2 id="footerTitle">Contact Us</h2>
             <hr id="hrFooter">
             <div class="container" id="container_table">
                 <form id="contactForm">
@@ -201,9 +199,10 @@
                     <input required type="text" id="subject" name="subject" placeholder="Subject">
 
                     <label for="message">Message:</label>
-                    <textarea required onkeyup="countChar(this)" minlength="100" id="message" name="message" placeholder="Write something.."></textarea>
+                    <textarea required onkeyup="countChar(this)" minlength="100" id="message" name="message" rows="4"
+                        placeholder="Write something.."></textarea>
                     <p id="charNum"></p>
-                    <button id="contactButton" type="submit" value="Submit">Submit</button>
+                    <button id="contactButton" type="submit" value="Submit" class="btn">Submit</button>
 
                 </form>
         </section>
@@ -215,10 +214,10 @@
                     Copyright© 2020 Genuine programmers , All rights reserved
 
                 </p>
-                <p>Contribution of : <a href="https://github.com/Mohammad-Eshtaiwi"> Mohammed Eshtaiwi</a> ,<a
-                        href="https://github.com/marahirshaid"> Marah Irshaid</a> , <a
-                        href="https://github.com/amjadaljirawi">Amjad Al-Jirawi</a> and <a
-                        href="https://github.com/AbdulhakimZatar">Abdulhakim Zatar</a> </p>
+                <p>Contribution of : <a href="https://github.com/Mohammad-Eshtaiwi" target="_blank"> Mohammed
+                        Eshtaiwi</a> ,<a href="https://github.com/marahirshaid" target="_blank"> Marah Irshaid</a> , <a
+                        href="https://github.com/amjadaljirawi" target="_blank">Amjad Al-Jirawi</a> and <a
+                        href="https://github.com/AbdulhakimZatar" target="_blank">Abdulhakim Zatar</a> </p>
 
             </div>
         </section>
