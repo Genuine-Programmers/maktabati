@@ -125,7 +125,7 @@ article.books > .row {
 }
 
 /* main */
-main article section,
+main article > section,
 .slider,
 .vision,
 .contact-us {
@@ -213,9 +213,11 @@ textarea:focus {
 }
 
 .slider {
-  min-height: 600px;
+  min-height: 550px;
 }
-
+.slider img {
+  height: 550px;
+}
 .copyright a {
   color: var(--main-color);
   text-decoration: underline;
