@@ -318,6 +318,7 @@ try {
   console.log("");
 }
 
+// eslint-disable-next-line no-unused-vars
 function countChar(val) {
   var charNum = document.getElementById("charNum");
   var len = val.value.length;
