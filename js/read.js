@@ -3,9 +3,9 @@
 let readPdf = document.querySelector("embed");
 let book = JSON.parse(localStorage.getItem("book"));
 
-let Clone = readPdf.cloneNode(true);
-Clone.setAttribute("src", book.pdf);
-readPdf.parentNode.replaceChild(Clone, readPdf);
+let clone = readPdf.cloneNode(true);
+clone.setAttribute("src", book.pdf);
+readPdf.parentNode.replaceChild(clone, readPdf);
 
 console.log(book);
 console.log(readPdf.src);

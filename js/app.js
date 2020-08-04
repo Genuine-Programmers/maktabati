@@ -1,5 +1,6 @@
 /* eslint-disable quotes */
 "use strict";
+// object constructor and generator
 const allBooks = [];
 function BooksGenerator(
   title,
@@ -115,26 +116,35 @@ new BooksGenerator(
 function sponsoredSlider() {
   let covers = document.querySelectorAll(".slider .cover img");
   let details = document.querySelectorAll(".slider .details");
+  let sliderIndex = 0;
   console.log(details);
-  const sponsored = [];
   // eslint-disable-next-line no-undef
-  allBooks.forEach((book) => {
-    if (book.isSponsored) sponsored.push(book);
+  console.log(covers);
+  console.log(allBooks);
+  allBooks.forEach((book, index) => {
+    console.log(book, covers[index], details[index]);
+    if (book.isSponsored) {
+      populateDetails(covers[sliderIndex], details[sliderIndex], book);
+      sliderIndex++;
+    }
   });
-  for (let index = 0; index < sponsored.length; index++) {
-    console.table(sponsored[index]);
-    covers[index].src = sponsored[index].cover;
-
-    details[index].children[0].innerHTML = sponsored[index].title;
-    console.log(details[index].children[0]);
-    details[index].children[1].children[0].innerHTML = sponsored[index].author;
-    details[index].children[2].children[0].innerHTML =
-      sponsored[index].publishedYear;
-    details[index].children[3].innerHTML = sponsored[index].category;
-    details[index].children[4].innerHTML = sponsored[index].description;
+}
+sponsoredSlider();
+function populateDetails(cover, details, book, hasAudio = false) {
+  cover.src = book.cover;
+  details.children[0].innerHTML = book.title;
+  console.log(details.children[0]);
+  details.children[1].children[0].innerHTML = book.author;
+  details.children[2].children[0].innerHTML = book.publishedYear;
+  details.children[3].children[0].innerHTML = book.category;
+  details.children[4].innerHTML = book.description;
+  if (hasAudio) {
+    details.children[5].children[0].src = book.audio;
+    details.children[5].children[1].addEventListener("click", redirect);
   }
 }
 // function to refresh the slider each 5 sec
+//start with index 0 cuz the slider already displaying the first slide
 let indexOfSlider = 1;
 let controls = document.querySelectorAll(".control");
 for (let control = 0; control < controls.length; control++) {
@@ -159,10 +169,7 @@ function sliderControler() {
   indexOfSlider = event.path[0].dataset.index;
   refreshSlider();
 }
-sponsoredSlider();
 let sliderTimer = setInterval(refreshSlider, 5000);
-
-// random books
 
 function randomBooks() {
   let count = 0;
@@ -184,7 +191,7 @@ function randomBooks() {
   return books;
 }
 
-function displayBooksInIndex() {
+function displayBooks() {
   const books = document.querySelectorAll(".books-suggestions img");
   const booksToDisplay = randomBooks();
   for (let book = 0; book < books.length; book++) {
@@ -193,7 +200,7 @@ function displayBooksInIndex() {
     books[book].title = booksToDisplay[book].title;
   }
 }
-displayBooksInIndex();
+displayBooks();
 
 // function to redirect the user to the targeted book
 const sponsoredBtn = document.querySelectorAll(".sponsored .details .btn");
@@ -201,9 +208,12 @@ console.log(sponsoredBtn);
 for (let btn = 0; btn < sponsoredBtn.length; btn++) {
   sponsoredBtn[btn].addEventListener("click", redirect);
 }
-
+// redirect the user to the chosen book
 function redirect() {
-  let title = event.path[1].children[0].innerHTML;
+  let path = event.path.find((path) => path.classList.contains("details"));
+  console.log(event);
+  let title = path.children[0].innerHTML;
+  console.log(title);
   let book = allBooks.find((book) => book.title === title);
   console.log(book);
   localStorage.setItem("book", JSON.stringify(book));
@@ -222,43 +232,30 @@ function openOverlay() {
   document.querySelector(".overlay").classList.remove("transition-delay");
 }
 
+// eslint-disable-next-line no-unused-vars
 function closeOverlay() {
   document.querySelector(".content-overlay").style.right = "-1000px";
   document.querySelector(".overlay").style.width = "0%";
   try {
     document.querySelector(".popup").style.right = "10000px";
-  } catch (error) {
-    console.log("");
-  }
+    // eslint-disable-next-line no-empty
+  } catch (error) {}
   document
     .querySelector(".content-overlay")
     .classList.remove("transition-delay");
   document.querySelector(".overlay").classList.add("transition-delay");
-  localStorage.clear();
 }
 function overlayContent() {
   console.log(event);
   let title = event.path[0].alt;
   console.log(title);
-  //
   let book = allBooks.find((book) => book.title === title);
-
-  localStorage.setItem("book", JSON.stringify(book));
   let details = document.querySelector(".content-overlay .details");
   let cover = document.querySelector(".content-overlay img");
   console.log(details);
-
-  cover.src = book.cover;
-  cover.alt = book.title;
-  cover.title = book.title;
-  details.children[0].innerHTML = book.title;
-  details.children[1].children[0].innerHTML = book.author;
-  details.children[2].children[0].innerHTML = book.publishedYear;
-  details.children[3].innerHTML = book.category;
-  details.children[4].innerHTML = book.description;
-  details.children[5].children[0].src = book.audio;
+  populateDetails(cover, details, book, true);
 }
-
+// appear the continue reading button when there is a book in the local storage
 function continueReading() {
   let book = localStorage.getItem("book");
   console.log(book);
@@ -279,6 +276,14 @@ const oddSections = document.querySelectorAll(
   ".books > section:nth-of-type(odd) .container"
 );
 
+const oddSectionsOvserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) entry.target.classList.add("left-to-right");
+    else entry.target.classList.remove("left-to-right");
+  });
+});
+
 const evenSectionsOvserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     console.log(entry);
@@ -290,19 +295,12 @@ const evenSectionsOvserver = new IntersectionObserver((entries) => {
 evenSections.forEach((section) => {
   evenSectionsOvserver.observe(section);
 });
-const oddSectionsOvserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    console.log(entry);
-    if (entry.isIntersecting) entry.target.classList.add("left-to-right");
-    else entry.target.classList.remove("left-to-right");
-  });
-});
 
 oddSections.forEach((section) => {
   oddSectionsOvserver.observe(section);
 });
 
-var contactButton = document.getElementById("contactForm");
+let contactButton = document.getElementById("contactForm");
 
 function openPopup() {
   document.querySelector(".overlay").style.width = "100%";
@@ -314,14 +312,13 @@ try {
     event.preventDefault();
     openPopup();
   });
-} catch (error) {
-  console.log("");
-}
+  // eslint-disable-next-line no-empty
+} catch (error) {}
 
 // eslint-disable-next-line no-unused-vars
 function countChar(val) {
-  var charNum = document.getElementById("charNum");
-  var len = val.value.length;
+  let charNum = document.getElementById("charNum");
+  let len = val.value.length;
   if (len >= 100) {
     charNum.innerHTML = "100/100";
   } else {
