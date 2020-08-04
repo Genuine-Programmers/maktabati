@@ -42,17 +42,17 @@ renderMostViewed();
 
 function mostRecentcat() {
   // eslint-disable-next-line no-undef
-  let MostRecentarr = allBooks;
-  MostRecentarr.sort(function (a, b) {
+  let mostRecentArr = allBooks;
+  mostRecentArr.sort(function (a, b) {
     return a.publishedYear - b.publishedYear;
   });
-  MostRecentarr.reverse();
+  mostRecentArr.reverse();
 
   let MostRecentbooks = document.querySelectorAll(".most-recent img");
   for (let index = 0; index < MostRecentbooks.length; index++) {
-    MostRecentbooks[index].src = MostRecentarr[index].cover;
-    MostRecentbooks[index].alt = MostRecentarr[index].title;
-    MostRecentbooks[index].title = MostRecentarr[index].title;
+    MostRecentbooks[index].src = mostRecentArr[index].cover;
+    MostRecentbooks[index].alt = mostRecentArr[index].title;
+    MostRecentbooks[index].title = mostRecentArr[index].title;
   }
 }
 mostRecentcat();
@@ -116,7 +116,7 @@ function renderAudioBooks() {
 
   let imgAudioBooks = document.querySelectorAll(".audio-books img");
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < imgAudioBooks.length; i++) {
     let randomNum = generateNumber();
     let checkRandomNum = audioBooksArr.includes(randomNum);
     imgAudioBooks[i].src = allBooks[randomNum].cover;
