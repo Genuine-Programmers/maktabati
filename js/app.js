@@ -311,6 +311,7 @@ try {
     console.log(event);
     event.preventDefault();
     openPopup();
+    contactButton.reset();
   });
   // eslint-disable-next-line no-empty
 } catch (error) {}
