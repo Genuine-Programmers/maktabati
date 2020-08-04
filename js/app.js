@@ -313,6 +313,7 @@ try {
     console.log(event);
     event.preventDefault();
     openPopup();
+    contactButton.reset();
   });
 } catch (error) {
   console.log("");
